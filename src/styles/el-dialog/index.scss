@@ -1,0 +1,47 @@
+::v-deep .el-dialog__wrapper {
+  .el-dialog {
+    &__body {
+      display: inline-block;
+
+      .el-form {
+        &-item {
+          &__content {
+            width: 320px;
+
+            .el-select {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.json-pre-div {
+  width: 350px;
+  background: #fffff7;
+  // padding: 5px;
+  // margin: 5px;
+  border: 1px solid #fc0;
+
+  ::v-deep .string {
+    color: #3ab54a;
+  }
+
+  ::v-deep .number {
+    color: #25aae2;
+  }
+
+  ::v-deep .boolean {
+    color: #f98280;
+  }
+
+  ::v-deep .null {
+    color: #f1592a;
+  }
+
+  ::v-deep .key {
+    color: #92278f;
+  }
+}

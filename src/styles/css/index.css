@@ -1,0 +1,37 @@
+::v-deep .el-dialog__wrapper .el-dialog__body {
+  display: inline-block;
+}
+
+::v-deep .el-dialog__wrapper .el-dialog__body .el-form-item__content {
+  width: 320px;
+}
+
+::v-deep .el-dialog__wrapper .el-dialog__body .el-form-item__content .el-select {
+  width: 100%;
+}
+
+.json-pre-div {
+  width: 350px;
+  background: #fffff7;
+  border: 1px solid #fc0;
+}
+
+.json-pre-div ::v-deep .string {
+  color: #3ab54a;
+}
+
+.json-pre-div ::v-deep .number {
+  color: #25aae2;
+}
+
+.json-pre-div ::v-deep .boolean {
+  color: #f98280;
+}
+
+.json-pre-div ::v-deep .null {
+  color: #f1592a;
+}
+
+.json-pre-div ::v-deep .key {
+  color: #92278f;
+}
