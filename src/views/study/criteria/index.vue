@@ -53,8 +53,8 @@
 
 <script>
 import mixin from '../mixin/index.js';
-import MsInclusion from '@c/ScreeningTable/index.vue';
-import CriteriaDialog from './components/CriteriaDialog.vue';
+import MsInclusion from '@c/screening-table/index.vue';
+import CriteriaDialog from './components/criteria-dialog.vue';
 
 export default {
   name: 'StudyCriteria',

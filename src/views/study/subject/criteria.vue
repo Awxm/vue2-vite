@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import MsInclusion from '@c/ScreeningTable/index.vue';
+import MsInclusion from '@c/screening-table/index.vue';
 
 const tableName = 'subject';
 export default {

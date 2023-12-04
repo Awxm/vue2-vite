@@ -2,9 +2,9 @@ build/*.js
 src/assets
 public
 dist
-mock
+
 tests
 .stylelintrc
 .stylelintignore
-components/Tinymce/*.js
-tinymce
+src/components/tinymce/
+.env.

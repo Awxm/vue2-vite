@@ -1,0 +1,26 @@
+ls:
+  .dir: kebab-case
+  .scss: kebab-case
+  .js: kebab-case
+  .vue: PascalCase | lowercase
+
+  components:
+    .dir: kebab-case
+    .js: kebab-case
+    .vue: PascalCase | lowercase
+
+  src/views/**/components:
+    .vue: PascalCase | lowercase
+
+ignore:
+  - dist
+  - .git
+  - node_modules
+  - vite.config.js
+  - .cz-config.js
+  - .husky
+  - .prettierrc.js
+  - .stylelintrc.js
+  - commitlint.config.js
+  - src/tinymce
+  - src/styles/variables.module.scss
