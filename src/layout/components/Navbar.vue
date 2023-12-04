@@ -38,6 +38,7 @@ import { mapGetters } from 'vuex';
 import Mixin from './mixin/index.js';
 
 export default {
+  name: 'Navbar',
   components: {},
   mixins: [Mixin],
   data() {

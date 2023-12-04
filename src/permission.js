@@ -1,4 +1,4 @@
-import message from '@u/resetMessage';
+import message from '@u/reset-message/index.js';
 
 import getPageTitle from '@u/get-page-title';
 

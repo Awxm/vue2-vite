@@ -3,12 +3,12 @@
     <el-table ref="table" v-loading="loading" :data="tableData" style="width: 100%">
       <el-table-column type="index" label="序号" width="100" />
       <el-table-column prop="introduction" label="描述">
-        <template v-slot="scope">
+        <template #default="scope">
           <div style="white-space: pre-wrap" v-html="scope.row.introduction"></div>
         </template>
       </el-table-column>
       <el-table-column v-if="isEdit" label="操作" width="120px">
-        <template v-slot="scope">
+        <template #default="scope">
           <el-button type="text" @click="handleEditClick(scope.row, scope.$index)">
             编辑
           </el-button>
@@ -26,7 +26,7 @@
           </el-radio-group>
         </template>
         <!--插槽-->
-        <template v-slot="scope">
+        <template #default="scope">
           <el-radio-group v-model="scope.row.conform" @change="handleRadioChildClick">
             <el-radio :label="1">
               <span></span>

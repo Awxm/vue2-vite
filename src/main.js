@@ -2,9 +2,9 @@ import Vue from 'vue';
 
 import ElementUI from 'element-ui';
 
-import message from '@u/resetMessage/index.js';
+import message from '@u/reset-message/index.js';
 import Pagination from '@c/Pagination/index.vue';
-import SearchBox from '@c/SearchBox/index.vue';
+import SearchBox from '@c/search-box/index.vue';
 import { post, get } from '@/https/request.js';
 import urls from '@/https/urls.js';
 import checkPermission from '@/directives/check/permission'; // 权限判断函数

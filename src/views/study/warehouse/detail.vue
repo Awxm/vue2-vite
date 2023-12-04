@@ -36,7 +36,7 @@
 
     <detail-dialog
       :dialog.sync="dialog"
-      :formData.sync="formData"
+      :form-data.sync="formData"
       :title="title"
       @handleSubmitClick="handleDialogSubmitClick"
     />
@@ -45,7 +45,7 @@
 
 <script>
 import _ from 'lodash';
-import DetailDialog from './components/detailDialog';
+import DetailDialog from './components/DetailDialog.vue';
 
 const tableName = 'wrehouse';
 export default {

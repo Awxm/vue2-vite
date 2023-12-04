@@ -66,13 +66,13 @@
     <pagination
       :request="equipmentList"
       :page.sync="pagination.page"
-      :pageSize.sync="pagination.pageSize"
+      :page-size.sync="pagination.pageSize"
       :total="total"
     />
     <equipment-dialog
       :dialog.sync="dialog"
-      :formData.sync="formData"
-      :studyData="studyData"
+      :form-data.sync="formData"
+      :study-data="studyData"
       :title="title"
       @handleSubmitClick="handleDialogSubmitClick"
     />
@@ -80,9 +80,9 @@
 </template>
 
 <script>
-import search from '@st/mixin/search';
-import page from '@/static/mixin/page';
-import EquipmentDialog from './components/equipmentDialog';
+import search from '@/static/mixin/search.js';
+import page from '@/static/mixin/page.js';
+import EquipmentDialog from './components/EquipmentDialog';
 
 const tableName = 'equipment';
 

@@ -27,7 +27,7 @@
       <div class="title">入组标准</div>
       <ms-inclusion
         ref="inclusion"
-        :tableData="inclusionData"
+        :table-data="inclusionData"
         @handleEditClick="handleEditCriteriaClick($event, 'inclusion')"
         @handleDelClick="handleDelCriteriaClick($event, 'inclusion')"
       />
@@ -36,7 +36,7 @@
       <div class="title">排除标准</div>
       <ms-inclusion
         ref="exclusion"
-        :tableData="exclusionData"
+        :table-data="exclusionData"
         @handleEditClick="handleEditCriteriaClick($event, 'exclusion')"
         @handleDelClick="handleDelCriteriaClick($event, 'exclusion')"
       />
@@ -44,8 +44,8 @@
     <criteria-dialog
       :dialog.sync="dialog"
       :title="title"
-      :formData.sync="formData"
-      :dialogType="dialogType"
+      :form-data.sync="formData"
+      :dialog-type="dialogType"
       @handleSubmitClick="handleCriteriaDialogSubmitClick"
     />
   </div>
@@ -54,7 +54,7 @@
 <script>
 import mixin from '../mixin/index.js';
 import MsInclusion from '@c/screening-table/index.vue';
-import CriteriaDialog from './components/criteria-dialog.vue';
+import CriteriaDialog from './components/CriteriaDialog.vue';
 
 export default {
   name: 'StudyCriteria',

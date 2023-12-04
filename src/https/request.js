@@ -1,5 +1,5 @@
 import axios from 'axios';
-import message from '@u/resetMessage';
+import message from '@u/reset-message/index.js';
 import { MessageBox } from 'element-ui';
 import store from '@/store';
 // 记录请求的状态码

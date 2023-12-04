@@ -41,10 +41,10 @@
 
 <script>
 import path from 'path-browserify';
-import { isExternal } from '@/utils/validate';
 import Mixin from '../mixin/index.js';
-import Item from './Item';
-import AppLink from './Link';
+import { isExternal } from '@/utils/validate.js';
+import Item from './Item.vue';
+import AppLink from './Link.vue';
 
 export default {
   name: 'SidebarItem',

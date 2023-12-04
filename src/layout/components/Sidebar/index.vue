@@ -20,12 +20,13 @@
 
 <script>
 import { mapGetters } from 'vuex';
-import Logo from './Logo';
-import SidebarItem from './SidebarItem';
-import variables from '@/styles/variables.module.scss';
 import Mixin from '../mixin/index.js';
+import Logo from './Logo.vue';
+import SidebarItem from './SidebarItem.vue';
+import variables from '@/styles/variables.module.scss';
 
 export default {
+  name: 'Sidebar',
   components: { SidebarItem, Logo },
   mixins: [Mixin],
   computed: {

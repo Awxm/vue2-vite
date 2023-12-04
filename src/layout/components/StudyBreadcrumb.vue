@@ -1,9 +1,9 @@
 <template>
-  <div class="ms-study-breadcrumb" v-if="isStudy">
+  <div v-if="isStudy" class="ms-study-breadcrumb">
     <span class="study-breadcrumb__item">广州医科大学附属肿瘤第一医院国家呼吸医学中心</span>
     <span class="study-breadcrumb__inner"><i class="el-icon-arrow-right"></i></span>
     <template v-if="isStudySelect">
-      <el-dropdown trigger="click" @command="handleCommand" :disabled="disabled">
+      <el-dropdown trigger="click" :disabled="disabled" @command="handleCommand">
         <span class="study-name"> {{ studyName }}<i class="el-icon-arrow-down el-icon--right"></i> </span>
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item v-for="item in tableData" :key="item.id" :command="item">{{ item.name }}</el-dropdown-item>
@@ -19,7 +19,7 @@ import { mapGetters } from 'vuex';
 const tableName = 'study';
 
 export default {
-  name: 'studyBreadcrumb',
+  name: 'StudyBreadcrumb',
   components: {},
   filters: {},
   props: {},

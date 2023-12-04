@@ -35,19 +35,19 @@
     <pagination
       :request="transportList"
       :page.sync="pagination.page"
-      :pageSize.sync="pagination.pageSize"
+      :page-size.sync="pagination.pageSize"
       :total="total"
     />
     <transport-dialog
       :dialog.sync="dialog"
-      :formData.sync="formData"
+      :form-data.sync="formData"
       :title="title"
       @handleSubmitClick="handleDialogSubmitClick"
     />
     <transport-reagent-dialog
       :dialog.sync="reagentDialog"
-      :tableData="reagentRow.reagent"
-      :reagentData.sync="reagentData"
+      :table-data="reagentRow.reagent"
+      :reagent-data.sync="reagentData"
       @handleRecycleCreateClick="handleRecycleCreateClick"
       @handleSubmitClick="handleReagentDialogSubmitClick"
     />
@@ -55,9 +55,9 @@
 </template>
 
 <script>
-import search from '@st/mixin/search';
-import page from '@/static/mixin/page';
-import TransportDialog from './components/transportDialog';
+import search from '@st/mixin/search.js';
+import page from '@/static/mixin/page.js';
+import TransportDialog from './components/TransportDialog.vue';
 import TransportReagentDialog from './components/TransportReagentDialog.vue';
 
 const tableName = 'transport';
