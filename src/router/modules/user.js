@@ -1,17 +1,12 @@
-const user = () => import('@v/user/index');
-
 const list = [
   {
     path: '/user',
     redirect: '/user/index',
     name: 'User',
-    meta: { title: '用户管理', icon: 'user' },
+    meta: { title: '用户管理', icon: 'el-icon-user' },
     children: [
-      {
-        path: 'index',
-        component: user,
-        meta: { title: '用户列表', icon: 'user' },
-      },
+      { path: 'index', component: () => import('@v/user/index'), meta: { title: '用户列表' } },
+      { path: 'name', component: () => import('@v/user/index'), meta: { title: '用户操作' } },
     ],
   },
 ];

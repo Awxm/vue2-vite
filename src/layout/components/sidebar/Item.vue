@@ -11,19 +11,38 @@ export default {
       type: String,
       default: '',
     },
+    isArrow: {
+      type: [Boolean, String],
+      default: false,
+    },
   },
   render(h, context) {
-    const { icon, title } = context.props;
+    const { icon, title, isArrow } = context.props;
     const vnodes = [];
-    vnodes.push(<span class={"round"}/>);
-    if (icon) {
+
+    if (icon){
       if (icon.includes('el-icon')) {
-        vnodes.push(<i class={[icon, 'sub-el-icon']} />);
+        vnodes.push(<i class={[icon, 'sub-el-icon']} />)
+      } else {
+        vnodes.push(<i class={[icon,'iconfont', 'sub-el-icon']} />);
       }
     }
 
     if (title) {
-      vnodes.push(<span slot='title'>{title}</span>);
+      vnodes.splice(
+        2,
+        0,
+        <span
+          // eslint-disable-next-line jsx-quotes
+          class="sub-title"
+          style={`width: ${isArrow ? '110px' : '100%'}`}
+          title={title}
+          // eslint-disable-next-line jsx-quotes
+          slot="title"
+        >
+          {title}
+        </span>,
+      );
     }
     return vnodes;
   },

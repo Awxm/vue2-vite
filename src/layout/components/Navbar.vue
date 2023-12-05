@@ -1,15 +1,7 @@
 <template>
   <div class="navbar">
-    <div class="tab">
-      <el-tabs v-model="activeName" @tab-click="handleClick">
-        <el-tab-pane
-          v-for="route in tabPane"
-          :key="route.path"
-          :label="route.meta.title"
-          :name="hasOneShowingChild(route.children, route) ? route.redirect : route.path"
-        ></el-tab-pane>
-      </el-tabs>
-    </div>
+    <hamburger :is-active="sidebar.opened" class="hamburger-container" @toggleClick="toggleSideBar" />
+    <breadcrumb class="breadcrumb-container" />
     <div class="right-menu">
       <el-dropdown class="avatar-container" trigger="click">
         <div class="avatar-wrapper">
@@ -35,46 +27,27 @@
 
 <script>
 import { mapGetters } from 'vuex';
-import Mixin from './mixin/index.js';
+import Breadcrumb from './breadcrumb/index.vue';
+import Hamburger from './hamburger/index.vue';
 
 export default {
   name: 'Navbar',
-  components: {},
-  mixins: [Mixin],
+  components: { Breadcrumb, Hamburger },
+
   data() {
-    return {
-      activeName: '/user',
-    };
+    return {};
   },
 
   computed: {
-    ...mapGetters(['permission_routes', 'avatar', 'nickname']),
-
-    tabPane() {
-      return this.permission_routes.filter((f) => !f.hidden);
-    },
-
-    activeMenu() {
-      const route = this.$route;
-      const { meta, path } = route;
-      return meta.topTab || path;
-    },
+    ...mapGetters(['sidebar', 'avatar', 'nickname']),
   },
 
-  watch: {
-    activeMenu: {
-      handler(value) {
-        this.activeName = value;
-      },
-      immediate: true,
-    },
-  },
+  watch: {},
 
   methods: {
-    handleClick({ name: path }) {
-      this.$router.push(path);
+    toggleSideBar() {
+      this.$store.dispatch('app/toggleSideBar');
     },
-
     async logout() {
       await this.$store.dispatch('user/logout');
       this.$router.push(`/login?redirect=${this.$route.fullPath}`);
@@ -86,39 +59,32 @@ export default {
 <style lang="scss" scoped>
 .navbar {
   position: relative;
-  height: 68px;
+  height: 50px;
   overflow: hidden;
   background: #fff;
-  // border: 1px solid #f0f0f0;
-  .tab {
+  box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+
+  .hamburger-container {
     float: left;
     height: 100%;
-    padding-left: 30px;
+    line-height: 46px;
     cursor: pointer;
     transition: background 0.3s;
     -webkit-tap-highlight-color: transparent;
 
-    ::v-deep .el-tabs {
-      &__item {
-        height: 68px;
-        line-height: 68px;
-      }
-      // &__active-bar {
-      //   background-color: #fff;
-      // }
-
-      &__nav-wrap {
-        &::after {
-          background-color: #fff;
-        }
-      }
+    &:hover {
+      background: rgba(0, 0, 0, 0.025);
     }
+  }
+
+  .breadcrumb-container {
+    float: left;
   }
 
   .right-menu {
     float: right;
     height: 100%;
-    line-height: 68px;
+    line-height: 50px;
 
     &:focus {
       outline: none;
@@ -143,26 +109,29 @@ export default {
     }
 
     .avatar-container {
-      height: 100%;
       margin-right: 30px;
+
       .avatar-wrapper {
         position: relative;
         display: flex;
         align-items: center;
-        height: 100%;
+
+        span {
+          margin: 0 10px;
+        }
         .user-avatar {
-          width: 48px;
-          height: 48px;
+          width: 40px;
+          height: 40px;
           cursor: pointer;
-          border-radius: 50%;
+          border-radius: 10px;
         }
 
         .el-icon-caret-bottom {
+          position: absolute;
+          top: 25px;
+          right: -20px;
           font-size: 12px;
           cursor: pointer;
-        }
-        span {
-          margin: 0 16px;
         }
       }
     }

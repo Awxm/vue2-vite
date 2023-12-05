@@ -1,10 +1,10 @@
 <template>
   <div class="has-logo">
-    <logo :collapse="false" />
+    <logo :collapse="isCollapse" />
     <el-scrollbar wrap-class="scrollbar-wrapper">
       <el-menu
         :default-active="activeMenu"
-        :collapse="false"
+        :collapse="isCollapse"
         :background-color="variables.menuBg"
         :text-color="variables.menuText"
         :unique-opened="false"
@@ -12,7 +12,7 @@
         :collapse-transition="false"
         mode="vertical"
       >
-        <sidebar-item v-for="route in sidebarRoutes" :key="route.path" :item="route" :base-path="route.path" />
+        <sidebar-item v-for="route in permission_routes" :key="route.path" :item="route" :base-path="route.path" />
       </el-menu>
     </el-scrollbar>
   </div>
@@ -30,30 +30,19 @@ export default {
   components: { SidebarItem, Logo },
   mixins: [Mixin],
   computed: {
-    ...mapGetters(['permission_routes']),
+    ...mapGetters(['sidebar', 'permission_routes']),
     activeMenu() {
       const route = this.$route;
       const { meta, path } = route;
-      // if set path, the sidebar will highlight the path you set
-      if (meta.activeMenu) {
-        return meta.activeMenu;
-      }
+      if (meta.activeMenu) return meta.activeMenu;
       return path;
-    },
-
-    sidebarRoutes() {
-      const route = this.$route;
-      const { path, meta } = route;
-      let key = path;
-      if (meta.topTab) key = meta.topTab;
-      return this.permission_routes.filter((f) => {
-        const oneChild = this.hasOneShowingChild(f.children, f);
-        return !f.hidden && key === f[oneChild ? 'redirect' : 'path'];
-      });
     },
 
     variables() {
       return variables;
+    },
+    isCollapse() {
+      return !this.sidebar.opened;
     },
   },
 };

@@ -1,7 +1,7 @@
-import fuyi from '@/assets/img/fuyi.png';
+import musui from '@/assets/img/logo.png';
 
 export default {
   title: '募随',
   fixedHeader: true,
-  logo: fuyi,
+  logo: musui,
 };

@@ -1,6 +1,5 @@
 <template>
   <section class="app-main">
-    <study-breadcrumb></study-breadcrumb>
     <transition name="fade-transform" mode="out-in">
       <router-view :key="key" />
     </transition>
@@ -8,11 +7,9 @@
 </template>
 
 <script>
-import StudyBreadcrumb from './StudyBreadcrumb.vue';
-
 export default {
   name: 'AppMain',
-  components: { StudyBreadcrumb },
+  components: {},
   computed: {
     key() {
       return this.$route.path;
@@ -35,7 +32,7 @@ export default {
 }
 
 .fixed-header + .app-main {
-  padding-top: 68px;
+  padding-top: 50px;
 }
 </style>
 
