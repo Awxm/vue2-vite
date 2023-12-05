@@ -4,7 +4,7 @@
       <el-table-column type="index" label="序号" width="100" />
       <el-table-column prop="introduction" label="描述">
         <template #default="scope">
-          <div style="white-space: pre-wrap" v-html="scope.row.introduction"></div>
+          <div v-dompurify-html="scope.row.introduction" style="white-space: pre-wrap"></div>
         </template>
       </el-table-column>
       <el-table-column v-if="isEdit" label="操作" width="120px">

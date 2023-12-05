@@ -22,6 +22,7 @@ import 'tinymce/plugins/fullscreen';
 import 'tinymce/plugins/preview';
 import emoticons from '@/tinymce/emoticons/js/emojis';
 import cn from '@/tinymce/langs/zh_CN.js';
+
 export default {
   components: {
     Editor,
@@ -92,7 +93,7 @@ export default {
          */
         // 图片上传三个参数，图片数据，成功时的回调函数，失败时的回调函数
         images_upload_handler: (blobInfo, success) => {
-          var formData = new FormData();
+          const formData = new FormData();
           formData.append('file', blobInfo.blob(), blobInfo.filename());
           formData.append('type', 'article');
           formData.append('groupName', 'article');

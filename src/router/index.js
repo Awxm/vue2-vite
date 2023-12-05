@@ -1,9 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+import Layout from '@/layout';
 import Account from './account';
 import { data } from './sort/index.json';
-
-import Layout from '@/layout';
 
 Vue.use(Router);
 

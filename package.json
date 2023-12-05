@@ -28,6 +28,7 @@
 		"path-to-regexp": "2.4.0",
 		"tinymce": "^5.0.3",
 		"vue": "2.6.10",
+		"vue-dompurify-html": "2.6.0",
 		"vue-router": "3.0.6",
 		"vuex": "3.1.0",
 		"vuex-persistedstate": "^4.1.0"
@@ -72,11 +73,11 @@
 	"lint-staged": {
 		"src/**/*.{js,vue}": [
 			"prettier --write",
-			"yarn lint",
+			"npm run lint",
 			"git add ."
 		],
 		"src/**/*.{css,scss,vue}": [
-			"yarn lint:stylelint",
+			"npm run lint:stylelint",
 			"git add ."
 		]
 	},

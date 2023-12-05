@@ -12,11 +12,10 @@ import checkPermission from '@/directives/check/permission'; // 权限判断函�
 import 'normalize.css/normalize.css'; // A modern alternative to CSS resets
 import 'element-ui/lib/theme-chalk/index.css';
 import '@/styles/index.scss'; // global css
+import directives from '@/directives';
 import App from './App.vue';
 import store from './store/index.js';
 import router from './router';
-
-import directives from '@/directives';
 
 import * as filters from './filters';
 

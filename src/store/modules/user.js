@@ -1,5 +1,5 @@
-import { post } from '@/https/request';
-import urls from '@/https/urls';
+// import { post } from '@/https/request';
+// import urls from '@/https/urls';
 import { resetRouter } from '@/router';
 
 const state = {
@@ -39,9 +39,9 @@ const mutations = {
 
 const actions = {
   // user login
-  login({ commit }, loginForm) {
-    return new Promise((resolve, reject) => {
-      const { username, password } = loginForm;
+  login({ commit }) {
+    return new Promise((resolve) => {
+      // const { username, password } = loginForm;
       commit('SET_AUID', '1');
       commit('SET_TOKEN', '1');
       resolve();
@@ -61,8 +61,8 @@ const actions = {
   },
 
   // get user info
-  getInfo({ commit, state }) {
-    return new Promise((resolve, reject) => {
+  getInfo({ commit }) {
+    return new Promise((resolve) => {
       const avatarUrl = 'https://img0.baidu.com/it/u=3950247347,4044272545&fm=253&fmt=auto&app=138&f=JPEG?w=400&h=400';
       const response = { id: '12', username: 'username', nickname: 'nickname', phone: '18172348119', avatarUrl };
       commit('SET_AUID', '12');

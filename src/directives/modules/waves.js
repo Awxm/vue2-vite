@@ -31,13 +31,13 @@ function handleClick(el, binding) {
       const scrollTop = e.pageY - rect.top - ripple.offsetHeight / 2 - document.documentElement.scrollTop;
       const scrollLeft = e.pageX - rect.left - ripple.offsetWidth / 2 - document.documentElement.scrollLeft;
       switch (opts.type) {
-      case 'center':
-        ripple.style.top = `${rect.height / 2 - ripple.offsetHeight / 2}px`;
-        ripple.style.left = `${rect.width / 2 - ripple.offsetWidth / 2}px`;
-        break;
-      default:
-        ripple.style.top = `${scrollTop || document.body.scrollTop}px`;
-        ripple.style.left = `${scrollLeft || document.body.scrollLeft}px`;
+        case 'center':
+          ripple.style.top = `${rect.height / 2 - ripple.offsetHeight / 2}px`;
+          ripple.style.left = `${rect.width / 2 - ripple.offsetWidth / 2}px`;
+          break;
+        default:
+          ripple.style.top = `${scrollTop || document.body.scrollTop}px`;
+          ripple.style.left = `${scrollLeft || document.body.scrollLeft}px`;
       }
       ripple.style.backgroundColor = opts.color;
       ripple.className = 'waves-ripple z-active';

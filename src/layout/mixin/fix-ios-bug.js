@@ -13,7 +13,7 @@ export default {
     fixBugIniOS() {
       const $subMenu = this.$refs.subMenu;
       if ($subMenu) {
-        const {handleMouseleave} = $subMenu;
+        const { handleMouseleave } = $subMenu;
         $subMenu.handleMouseleave = (e) => {
           if (this.device === 'mobile') {
             return;

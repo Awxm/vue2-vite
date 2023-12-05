@@ -6,5 +6,5 @@ dist
 tests
 .stylelintrc
 .stylelintignore
-src/components/tinymce/
+tinymce/
 .env.
