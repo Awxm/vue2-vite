@@ -1,8 +1,8 @@
 {
-	"name": "follow-up",
+	"name": "vue2Vite",
 	"version": "1.0.0",
-	"description": "中山五院随访",
-	"author": "aidi",
+	"description": "",
+	"author": "chenxin",
 	"scripts": {
 		"dev": "vite",
 		"build:prod": "vite build",
